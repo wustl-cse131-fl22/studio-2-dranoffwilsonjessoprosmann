@@ -19,6 +19,9 @@ public class Ruin {
 
 		System.out.println("How many days will you simulate?");
 		int totalSimulations = in.nextInt();
+		
+		int losses = 0;
+		int wins = 0;
 
 		for (int days = 0; days <= totalSimulations; days++) {
 			int money = startingAmount;
@@ -37,11 +40,14 @@ public class Ruin {
 			System.out.println("The number of plays is " + numberOfPlays);
 			if (money ==0) {
 				System.out.println("You lose!!");
+				losses++;
 			}
 			else {
 				System.out.println("You win!");
+				wins++;
 			}
 		}
+		double ruinrate= (double) losses/totalSimulations ;
 	}
 
 }
